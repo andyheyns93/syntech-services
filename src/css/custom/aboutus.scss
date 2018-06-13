@@ -1,0 +1,135 @@
+.about-us-header {
+    color: $primary-text-color2!important;
+    h1 {
+        font-size: 24px;
+        color: #444;
+        line-height: 25px;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+    h3 {
+        font-size: 24px;
+        color: $primary-text-color2!important;
+        font-weight: 400;
+    }
+    p {
+        color: #666;
+        line-height: 23px;
+        margin-bottom: 40px;
+        @media(min-width: 992px) {
+            width: 88%;
+        }
+    }
+}
+
+.about-us-team {
+    margin-bottom: 40px;
+    h1 {
+        color: $primary-text-color2!important;
+    }
+    h3 {
+        font-size: 24px;
+        color: $primary-text-color2!important;
+        font-weight: 400;
+    }
+    h4 {
+        font-size: 20px;
+        color: #666;
+        font-weight: 400;
+    }
+    .header {
+        color: $primary-text-color2!important;
+    }
+    .team {
+        margin-top: 50px!important;
+    }
+    .team .team-row {
+        text-align: left!important;
+        margin-bottom: 35px!important;
+    }
+    blockquote {
+        border-left: 2px solid $primary-text-color2!important;
+    }
+    .testimonial {
+        padding-bottom: 40px;
+    }
+}
+
+.about-us-skills {
+    padding-bottom: 40px;
+    h3 {
+        font-size: 24px;
+        color: $primary-text-color2!important;
+        font-weight: 400;
+    }
+    p {
+        color: #666;
+        line-height: 23px;
+        margin-bottom: 40px;
+        @media(min-width: 992px) {
+            width: 88%;
+        }
+    }
+    .skill {
+        padding: 10px 15px;
+        color: #666;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+.about-us-certificates {
+    padding-bottom: 40px;
+    h3 {
+        font-size: 24px;
+        color: $primary-text-color2!important;
+        font-weight: 400;
+    }
+    h5 {
+        color: #3B88B6 !important;
+        font-weight: 400;
+    }
+    p {
+        color: #666;
+        line-height: 23px;
+        margin-bottom: 40px;
+        @media(min-width: 992px) {
+            width: 88%;
+        }
+    }
+}
+
+.about-us-questions {
+    h4 {
+        font-size: 20px;
+        color: #5F6E7C;
+        font-weight: 400;
+        float: left;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    }
+    .button {
+        float: right;
+    }
+    .button.button-small {
+        padding: 10px 33px;
+        border: 1px solid #68A2EE;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .wrapper {
+        background: #F7F8FB;
+        border: 1px solid #EAEDF7;
+        border-radius: 8px;
+        padding: 30px 60px;
+        box-shadow: inset rgba(100, 100, 100, 0.25) 0 1px 1px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-us-questions {
+        .wrapper {
+            padding: 15px 15px;
+        }
+    }
+}

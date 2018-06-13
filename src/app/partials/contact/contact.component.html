@@ -1,0 +1,217 @@
+<div class="contact-us-map">
+    <div id="map"></div>
+    <!--
+    <div id="directions">
+        <p>Get directions to our office</p>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Write your zip code" />
+            </div>
+            <button type="submit" class="btn-shadow btn-shadow-sm btn-shadow-primary">
+                <span>Get directions</span>
+            </button>
+        </form>
+    </div>
+    -->
+</div>
+<div class="contact-us-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-xs-center">
+                <h3>{{ 'CONTACT.TITLE' | translate }}</h3>
+                <p>
+                    {{ 'CONTACT.TITLE_DETAIL' | translate }}
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-7 col-md-offset-0 message text-xs-center">
+                <form role="form" id="contactForm" method="post" [formGroup]="contactForm" (ngSubmit)="submitForm(contactForm.value)">
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['name'].valid && contactForm.controls['name'].touched, 'has-success': contactForm.controls['name'].valid && contactForm.controls['name'].touched }">
+                        <div class="col-xs-12 no-padding" style="padding-bottom:0px;">
+                            <label class="col-xs-12 text-xs-left no-padding control-label" for="name">{{ 'CONTACT.NAME' | translate }}</label>
+                        </div>
+                        <div class="col-xs-12 no-padding">
+                            <div class="input-group">
+                                <input type="text" name="name" class="form-control" id="name" [formControl]="contactForm.controls['name']" placeholder="{{ 'CONTACT.NAME' | translate }}" />
+                                <span class="input-group-addon">
+                                    <span *ngIf="contactForm.controls['name'].hasError('required') && contactForm.controls['name'].touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                <span *ngIf="contactForm.controls['name'].valid && contactForm.controls['name'].touched" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['name'].valid && contactForm.controls['name'].touched, 'has-success': contactForm.controls['name'].valid && contactForm.controls['name'].touched }">
+                        <label class="col-xs-12 text-xs-left no-padding control-label" for="name">{{ 'CONTACT.NAME' | translate }}</label>
+                        <div class="col-xs-12 no-padding ">
+                            <input type="text" name="name" class="form-control" id="name" [formControl]="contactForm.controls['name']" placeholder="{{ 'CONTACT.NAME' | translate }}" />
+                            <div *ngIf="contactForm.controls['name'].hasError('required') && contactForm.controls['name'].touched">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
+                            <div *ngIf="contactForm.controls['name'].valid && contactForm.controls['name'].touched">
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['email'].valid && contactForm.controls['email'].touched, 'has-success': contactForm.controls['email'].valid && contactForm.controls['email'].touched }">
+                        <div class="col-xs-12 no-padding" style="padding-bottom:0px;">
+                            <label class="col-xs-12 text-xs-left no-padding control-label" for="email">{{ 'CONTACT.EMAIL' | translate }}</label>
+                        </div>
+                        <div class="col-xs-12 no-padding">
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control" id="email" [formControl]="contactForm.controls['email']" placeholder="example@email.com" />
+                                <span class="input-group-addon">
+                                    <span *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                <span *ngIf="contactForm.controls['email'].valid && contactForm.controls['email'].touched" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['email'].valid && contactForm.controls['email'].touched, 'has-success': contactForm.controls['email'].valid && contactForm.controls['email'].touched }">
+                        <label class="col-xs-12 text-xs-left no-padding control-label" for="email">{{ 'CONTACT.EMAIL' | translate }}</label>
+                        <div class="col-xs-12 no-padding ">
+                            <input type="email" name="email" class="form-control" id="email" [formControl]="contactForm.controls['email']" placeholder="example@email.com" />
+                            <div *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
+                            <div *ngIf="contactForm.controls['email'].valid && contactForm.controls['email'].touched">
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched, 'has-success': contactForm.controls['phone'].valid && contactForm.controls['phone'].touched }">
+                        <div class="col-xs-12 no-padding" style="padding-bottom:0px;">
+                            <label class="col-xs-12 text-xs-left no-padding control-label" for="phone">{{ 'CONTACT.PHONE' | translate }}</label>
+                        </div>
+                        <div class="col-xs-12 no-padding">
+                            <div class="input-group">
+                                <input type="text" name="phone" class="form-control" id="phone" [formControl]="contactForm.controls['phone']" maxlength="10" placeholder="{{ 'CONTACT.PHONE' | translate }}" />
+                                <span class="input-group-addon">
+                                    <span *ngIf="!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                <span *ngIf="contactForm.controls['phone'].valid && contactForm.controls['phone'].touched" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched, 'has-success': contactForm.controls['phone'].valid && contactForm.controls['phone'].touched }">
+                        <label class="col-xs-12 text-xs-left no-padding control-label" for="phone">{{ 'CONTACT.PHONE' | translate }}</label>
+                        <div class="col-xs-12 no-padding ">
+                            <input type="text" name="phone" class="form-control" id="phone" [formControl]="contactForm.controls['phone']" maxlength="10" placeholder="{{ 'CONTACT.PHONE' | translate }}" />
+                            <div *ngIf="!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
+                            <div *ngIf="contactForm.controls['phone'].valid && contactForm.controls['phone'].touched">
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['subject'].valid && contactForm.controls['subject'].touched, 'has-success': contactForm.controls['subject'].valid && contactForm.controls['subject'].touched }">
+                        <div class="col-xs-12 no-padding" style="padding-bottom:0px;">
+                            <label class="col-xs-12 text-xs-left no-padding control-label" for="subject">{{ 'CONTACT.SUBJECT' | translate }}</label>
+                        </div>
+                        <div class="col-xs-12 no-padding">
+                            <div class="input-group">
+                                <select class="form-control" name="subject" id="subject" [formControl]="contactForm.controls['subject']">
+                                    <option value="">{{ 'CONTACT.SUBJECT_VALUE0' | translate }}</option>
+                                    <option value="general">{{ 'CONTACT.SUBJECT_VALUE1' | translate }}</option>
+                                    <option value="offer">{{ 'CONTACT.SUBJECT_VALUE2' | translate }}</option>
+                                </select>
+                                <span class="input-group-addon">
+                                    <span *ngIf="contactForm.controls['subject'].hasError('required') && contactForm.controls['subject'].touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                <span *ngIf="contactForm.controls['subject'].valid && contactForm.controls['subject'].touched" class="glyphicon glyphicon-ok form-control-feedback"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['subject'].valid && contactForm.controls['subject'].touched, 'has-success': contactForm.controls['subject'].valid && contactForm.controls['subject'].touched }">
+                        <label class="col-xs-12 text-xs-left no-padding control-label" for="subject">{{ 'CONTACT.SUBJECT' | translate }}</label>
+                        <div class="col-xs-12 no-padding ">
+                            <select class="form-control" name="subject" id="subject" [formControl]="contactForm.controls['subject']">
+                                <option value="">{{ 'CONTACT.SUBJECT_VALUE0' | translate }}</option>
+                                <option value="general">{{ 'CONTACT.SUBJECT_VALUE1' | translate }}</option>
+                                <option value="offer">{{ 'CONTACT.SUBJECT_VALUE2' | translate }}</option>
+                            </select>
+                            <div *ngIf="contactForm.controls['subject'].hasError('required') && contactForm.controls['subject'].touched">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
+                            <div *ngIf="contactForm.controls['subject'].valid && contactForm.controls['subject'].touched">
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                    <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['message'].valid && contactForm.controls['message'].touched, 'has-success': contactForm.controls['message'].valid && contactForm.controls['message'].touched }">
+                        <label class="col-xs-12 text-xs-left no-padding control-label" for="message">{{ 'CONTACT.MESSAGE' | translate }}</label>
+                        <div class="col-xs-12 no-padding ">
+                            <textarea name="message" class="form-control" id="message" rows="6" [formControl]="contactForm.controls['message']"></textarea>
+                            <div *ngIf="contactForm.controls['message'].hasError('required') && contactForm.controls['message'].touched">
+                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            </div>
+                            <div *ngIf="contactForm.controls['message'].valid && contactForm.controls['message'].touched">
+                                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12 no-padding ">
+                            <re-captcha id="recaptcha" (captchaResponse)="captchaControlValue = $event" site_key="6LeNARoUAAAAAJ797GO4N3AIRjbou4rnQRk824X7"></re-captcha>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" [disabled]="!contactForm.valid || captchaControlValue == ''" class="button button-small pull-right" value="{{ 'CONTACT.SEND' | translate }}" />
+                    </div>
+                    <div class="form-group" *ngIf="isSend">
+                        <div class="col-xs-12 no-padding ">
+                            <div class="callback">
+                                <div class="alert alert-success alert-dismissable" *ngIf="callbackSuccess">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (ngClick)="closeCallback();">×</a>
+                                    <strong>Success: </strong> <span class="callbackSuccess">{{ 'CONTACT.CALLBACKSUCCESSTEXT' | translate }}</span>
+                                </div>
+                                <div class="alert alert-danger alert-dismissable" *ngIf="callbackFailure">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (ngClick)="closeCallback();">×</a>
+                                    <strong>Error: </strong> <span class="callbackFailure">{{ callbackFailureText }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-md-offset-1 col-md-4 contact text-xs-center  ">
+                <div class="address">
+                    <h3>{{ 'CONTACT.OURADDRESS' | translate }}</h3>
+                    <p>
+                        Caimolaan 23
+                        <br /> 3970 Leopoldsburg
+                        <br /> Limburg, {{ 'CONTACT.COUNTRY' | translate }}
+                        <br /> BTW: BE 0669.692.057
+                    </p>
+                </div>
+                <div class="phone">
+                    <h3>{{ 'CONTACT.OURPHONE' | translate }}</h3>
+                    <p>
+                        (+32) 496 826 100
+                    </p>
+                </div>
+                <div class="online-support">
+                    <strong>{{ 'CONTACT.SUPPORT' | translate }}</strong>
+                    <p>
+                        {{ 'CONTACT.SUPPORTDETAIL' | translate }}
+                    </p>
+                </div>
+                <div class="social">
+                    <a href="https://www.facebook.com/SynTech-Services-1305612176170629" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://plus.google.com/u/1/102487595666759897246" target="_blank">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

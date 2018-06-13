@@ -1,0 +1,37 @@
+<div class="st-pusher">
+    <header class="navbar navbar-inverse hero" role="banner">
+        <div class="container">
+            <ul class="language-links pull-right">
+                <li class="nl">
+                    <a href="javascript:void(0);" class="language-link active" (click)="changeLanguage('nl')">nl</a>
+                </li>
+                <li class="separator">|</li>
+                <li class="en">
+                    <a href="javascript:void(0);" class="language-link" (click)="changeLanguage('en')">en</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <!--
+            <div class="navbar-header pull-left">
+                <a routerLink="home" class="navbar-brand">SynTech Services</a>
+            </div>
+            -->
+            <a class="navbar-brand" routerLink="home">
+                <span><img src="/assets/images/logos/logo.png"></span>
+                SynTech Services
+            </a>
+            <div class="sidebar-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+    <div class="index-sidebar-hero">
+        <div class="index-template">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

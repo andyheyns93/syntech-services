@@ -1,0 +1,15 @@
+$primary-bg-color: #222;
+$primary-text-color: #88191c;
+$primary-text-color2: #3B88B6;
+
+/* modules */
+@import "modules/mixins";
+
+/* pages */
+
+@import "custom/main";
+@import "custom/contactus";
+@import "custom/aboutus";
+@import "custom/services";
+@import "custom/pricing";
+@import "custom/gallery";

@@ -1,0 +1,76 @@
+<div class="gallery-showcase">
+    <div class="container">
+        <div class="row header">
+            <div class="col-md-12">
+                <h3>{{ 'PORTFOLIO.TITLE' | translate }}</h3>
+                <p>
+                    {{ 'PORTFOLIO.DETAIL' | translate }}
+                </p>
+            </div>
+            <div class="col-md-12 filtering">
+                <!--
+                <ul id="filters">
+                    <li><a data-filter="*" class="active">{{ 'PORTFOLIO.FILTER_ALL' | translate }}</a></li>
+                    <li><a data-filter=".mobile">Mobile</a></li>
+                    <li><a data-filter=".devices">Devices</a></li>
+                    <li><a data-filter=".interfaces">Interfaces</a></li>
+                    <li><a data-filter=".web">{{ 'PORTFOLIO.FILTER_WEB' | translate }}</a></li>
+                </ul>
+                -->
+                <ul id="filters" class="nav nav-tabs">
+                    <li><a class="active" data-toggle="tab" href="#all">{{ 'PORTFOLIO.FILTER_ALL' | translate }}</a></li>
+                    <li><a data-toggle="tab" href="#web">{{ 'PORTFOLIO.FILTER_WEB' | translate }}</a></li>
+                    <li><a data-toggle="tab" href="#application">{{ 'PORTFOLIO.FILTER_APPLICATION' | translate }}</a></li>
+                    <li><a data-toggle="tab" href="#other">{{ 'PORTFOLIO.FILTER_OTHER' | translate }}</a></li>
+                </ul>
+                <!--<h4>{{ 'PORTFOLIO.FILTER_WEB' | translate }}</h4>-->
+            </div>
+        </div>
+        <div class="tab-content">
+            <div id="all" class="tab-pane fade in active">
+                <div class="row gallery_container">
+                    <div class="col-md-4 devices interfaces web">
+                        <a class="pic" href="/assets/images/portfolio/gallery1.png" data-lightbox="image">
+                            <div class="layer">
+                                <p><span class="brankic-eye"></span> {{ 'PORTFOLIO.PORTFOLIO1' | translate }}</p>
+                            </div>
+                            <img src="/assets/images/portfolio/gallery1.png" class="img-responsive img-rounded img-thumbnail" alt="gallery1" />
+                        </a>
+                        <div class="caption">
+                            <!--{{ 'PORTFOLIO.GOTO_URL' | translate }} - -->
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <a href="https://datic.be" target="_blank">Datic.be</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="web" class="tab-pane fade">
+                <div class="row gallery_container">
+                    <div class="col-md-4 devices interfaces web">
+                        <a class="pic" href="/assets/images/portfolio/gallery1.png" data-lightbox="image">
+                            <div class="layer">
+                                <p><span class="brankic-eye"></span> {{ 'PORTFOLIO.PORTFOLIO1' | translate }}</p>
+                            </div>
+                            <img src="/assets/images/portfolio/gallery1.png" class="img-responsive img-rounded img-thumbnail" alt="gallery1" />
+                        </a>
+                        <div class="caption">
+                            <!--{{ 'PORTFOLIO.GOTO_URL' | translate }} - -->
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <a href="https://datic.be" target="_blank">Datic.be</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="application" class="tab-pane fade">
+                <div class="row gallery_container">
+                    <div class="coming-soon">{{ 'PORTFOLIO.NODATA' | translate }}</div>
+                </div>
+            </div>
+            <div id="other" class="tab-pane fade">
+                <div class="row gallery_container">
+                    <div class="coming-soon">{{ 'PORTFOLIO.NODATA' | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

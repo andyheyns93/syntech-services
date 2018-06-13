@@ -1,0 +1,23 @@
+.language-links {
+
+	list-style-type: none;
+    margin: 0;
+
+	li {
+		display: inline;
+		color:#fff;
+	}
+	li a {
+	    padding: 5px 15px;
+	    color:#fff;
+	    text-transform: uppercase;
+	    cursor:pointer;
+	}
+	li a {
+	    text-decoration: none;
+	}
+	.active {
+	    color: rgb(136,25,28)!important;
+	}
+}
+
